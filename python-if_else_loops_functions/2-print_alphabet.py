@@ -1,3 +1,5 @@
 #!/usr/bin/python3
+alphabet = ""
 for az in range(97, 123):
-    print(f"{chr(az)}", end='')
+    alphabet += f"{chr(az)}"
+print(alphabet, end='')
