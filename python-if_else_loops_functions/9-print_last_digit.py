@@ -4,6 +4,5 @@ def print_last_digit(number):
         last_number = str(-number)[-1]
     else:
         last_number = str(number)[-1]
-
     print("{}".format(int(last_number)), end="")
     return last_number
