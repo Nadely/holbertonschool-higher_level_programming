@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def islower(c) :
+def islower(c):
     if len(c) == 1 and c >= 'a' and c <= 'z':
         return True
     else:
