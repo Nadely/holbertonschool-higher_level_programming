@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import sys
+import hidden_4
 if __name__ == "__main__":
-    for arg in sys.argv[1:]:
-        if not arg.startswith('__'):
-            print("{}".format(arg))
+    module_names = dir(hidden_4)
+    filtered_names = sorted(name for name in module_names
+                            if not name.startswith("__"))
+    for name in filtered_names:
+        print(name)
