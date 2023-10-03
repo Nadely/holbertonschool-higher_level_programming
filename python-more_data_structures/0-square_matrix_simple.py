@@ -10,5 +10,3 @@ def square_matrix_simple(matrix=[]):
             new_row.append(square)
         new_matrix.append(new_row)
     return new_matrix
-
-
