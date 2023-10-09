@@ -48,9 +48,9 @@ class Square():
             print()
         else:
             for _ in range(self.__position[1]):
-                print("")
+                print()
             for _ in range(self._Square__size):
-                print("_" * self.__position[0] + "#" * self._Square__size)
+                print(" " * self.__position[0] + "#" * self._Square__size)
 
         """property getter"""
 
