@@ -5,6 +5,11 @@ this class is empty
 
 
 class Square():
+    """line defining that it is a class is empty"""
+    {}
+
+    """Private instance attribute: size"""
+
     def __init__(self, size):
         """Instantiation with size"""
 
