@@ -64,7 +64,7 @@ class Square():
     @position.setter
     def position(self, value):
         """Instantiation with optional position"""
-        if len(value) == 2 and isinstance(value, tuple):
+        if isinstance(value, tuple) and len(value) == 2:
             if isinstance(value[0], int) and isinstance(value[1], int):
                 self.__position = value
         else:
