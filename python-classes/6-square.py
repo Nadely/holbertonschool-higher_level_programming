@@ -10,10 +10,10 @@ class Square():
 
     """Private instance attribute: size"""
 
-    def __init__(self, _Square__size=0, position=(0, 0)):
+    def __init__(self, _Square__size=0, _position=(0, 0)):
         """Instantiation with size and position"""
         self._Square__size = _Square__size
-        self.__position = position
+        self.__position = _position
 
     """Public instance method"""
 
@@ -35,7 +35,7 @@ class Square():
         """Instantiation with optional size"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("size must be >= 0")
         """Change name"""
         self._Square__size = value
@@ -64,7 +64,7 @@ class Square():
     @position.setter
     def position(self, value):
         """Instantiation with optional position"""
-        if len(value) == 2:
+        if not isinstance(value, tuple) or len(value) == 2:
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
