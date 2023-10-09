@@ -39,7 +39,10 @@ class Square():
         """Change name"""
         self._Square__size = value
 
+        """Printing a square"""
+
     def my_print(self):
+        """print function"""
         if self._Square__size > 0:
             for _ in range (self._Square__size):
                 print("#" * self._Square__size)
