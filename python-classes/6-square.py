@@ -64,7 +64,8 @@ class Square():
     @position.setter
     def position(self, value):
         """Instantiation with optional position"""
-        if isinstance(value, tuple) or len(value) == 2:
+        if isinstance(value, tuple) or len(value) == 2 or isinstance(value,
+                                                                     int):
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
