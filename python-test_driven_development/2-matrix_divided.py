@@ -11,17 +11,22 @@ def matrix_divided(matrix, div):
     otherwise raise a TypeError
     div can’t be equal to 0, otherwise raise a ZeroDivisionError """
 
+    Invalid = "Each row of the matrix must have the same size"
+    Invalid_type = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list) or len(matrix) == 0:
-        if any(len(row) != len(matrix[0]) for row in matrix):
-            raise TypeError("Each row of the matrix must have the same size")
-        elif not isinstance(div, (int, float)):
-            raise TypeError("div must be a number")
-        elif div == 0:
-            raise ZeroDivisionError("division by zero")
+        raise TypeError(Invalid)
+    elif any(len(row) != len(matrix[0]) for row in matrix):
+        raise TypeError(Invalid)
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
     result = []
     for row in matrix:
         new_row = []
         for item in row:
+            if not isinstance(item, (int, float)):
+                raise TypeError(Invalid_type)
             result_item = round(item / div, 2)
             new_row.append(result_item)
         result.append(new_row)
