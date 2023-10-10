@@ -13,7 +13,6 @@ def matrix_divided(matrix, div):
 
     Invalid = "Each row of the matrix must have the same size"
     Invalid_type = "matrix must be a matrix (list of lists) of integers/floats"
-    Invalid_type_2 = "All elements of the matrix must be integers or floats"
     if not isinstance(matrix, list) or len(matrix) == 0:
         raise TypeError(Invalid_type)
     elif any(len(row) != len(matrix[0]) for row in matrix):
@@ -27,7 +26,7 @@ def matrix_divided(matrix, div):
         new_row = []
         for item in row:
             if not isinstance(item, (int, float)):
-                raise TypeError(Invalid_type_2)
+                raise TypeError(Invalid_type)
             result_item = round(item / div, 2)
             new_row.append(result_item)
         result.append(new_row)
