@@ -17,8 +17,8 @@ def matrix_divided(matrix, div):
         raise TypeError(Invalid_type)
     if not all(isinstance(row, list) for row in matrix):
         raise TypeError(Invalid_type)
-    if not all(isinstance(element, (int, float)) for row in
-               matrix for element in row):
+    if not all(isinstance(element, (int, float)) for row in matrix
+               for element in row):
         raise TypeError(Invalid_type)
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError(Invalid)
