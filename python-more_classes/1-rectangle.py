@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 """
 class Rectangle that defines a rectangle
+>>> my_rectangle = Rectangle(2, 4)
+{'_Rectangle__height': 2, '_Rectangle__width': 4}
+>>> my_rectangle = Rectangle(3, 10)
+{'_Rectangle__width': 10, '_Rectangle__height': 3}
 """
 
 
 class Rectangle():
+    """ Private instance attribute: width and height"""
+
     def __init__(self, height=0, width=0):
         self._Rectangle__height = height
         self._Rectangle__width = width
