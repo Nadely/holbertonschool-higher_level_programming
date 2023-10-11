@@ -11,7 +11,7 @@ class Rectangle that defines a rectangle
 class Rectangle:
     """ Private instance attribute: width and height"""
 
-    def __init__(self, height=0, width=0):
+    def __init__(self, width=0, height=0):
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         if height < 0:
