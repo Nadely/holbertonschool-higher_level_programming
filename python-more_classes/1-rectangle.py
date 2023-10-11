@@ -12,12 +12,12 @@ class Rectangle():
     """ Private instance attribute: width and height"""
 
     def __init__(self, height=0, width=0):
-        self._Rectangle__height = height
+        self.__height = height
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        self._Rectangle__width = width
+        self.__width = width
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width < 0:
@@ -34,12 +34,12 @@ class Rectangle():
 
     @width.setter
     def width(self, value):
-        self._Rectangle__width = value
+        self.__width = value
 
     """ height must be an integer, otherwise raise a TypeError exception
     with the message : height must be an integer
     if height is less than 0, raise a ValueError exception with the message :
-      height must be >= 0 """
+    height must be >= 0 """
 
     @property
     def height(self):
@@ -47,4 +47,4 @@ class Rectangle():
 
     @height.setter
     def height(self, value):
-        self._Rectangle__height = value
+        self.__height = value
