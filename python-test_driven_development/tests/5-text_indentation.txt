@@ -16,4 +16,11 @@ TypeError: text must be a string
 >>> text_indentation(":")
 :
 <BLANKLINE>
+
+>>> text_indentation("?:.")
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+.
 <BLANKLINE>

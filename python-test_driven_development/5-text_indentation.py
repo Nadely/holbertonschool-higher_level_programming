@@ -29,4 +29,4 @@ def text_indentation(text):
         else:
             result += s
             new_line = False
-    print(result)
+    print(result, end='')
