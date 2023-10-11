@@ -8,7 +8,7 @@ class Rectangle that defines a rectangle
 """
 
 
-class Rectangle():
+class Rectangle:
     """ Private instance attribute: width and height"""
 
     def __init__(self, height=0, width=0):
