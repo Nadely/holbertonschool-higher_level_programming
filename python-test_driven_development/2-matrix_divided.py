@@ -17,6 +17,9 @@ def matrix_divided(matrix, div):
         raise TypeError(Invalid_type)
     if not all(isinstance(row, list) for row in matrix):
         raise TypeError(Invalid_type)
+    if not all(isinstance(element, (int, float)) for row in matrix
+                    for element in row):
+        raise TypeError(Invalid_type)
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError(Invalid)
     if not isinstance(div, (int, float)):
@@ -27,8 +30,6 @@ def matrix_divided(matrix, div):
     for row in matrix:
         new_row = []
         for item in row:
-            if not isinstance(item, (int, float)):
-                raise TypeError(Invalid_type)
             result_item = round(item / div, 2)
             new_row.append(result_item)
         result.append(new_row)
