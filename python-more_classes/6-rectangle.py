@@ -92,4 +92,3 @@ class Rectangle:
 
     def instance(self):
         return Rectangle.number_of_instances
-
