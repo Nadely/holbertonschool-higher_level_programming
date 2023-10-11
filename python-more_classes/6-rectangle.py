@@ -9,6 +9,7 @@ class Rectangle that defines a rectangle
 
 
 class Rectangle:
+    """intisalization count of instance"""
     number_of_instances = 0
 
     """ Private instance attribute: width and height"""
