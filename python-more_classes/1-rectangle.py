@@ -5,7 +5,7 @@ class Rectangle that defines a rectangle
 
 
 class Rectangle():
-    def __init__(self, height=0, width=0 ) :
+    def __init__(self, height=0, width=0):
         self._Rectangle__height = height
         self._Rectangle__width = width
 
