@@ -9,7 +9,7 @@ class Rectangle that defines a rectangle
 
 
 class Rectangle:
-    """intisalization count of instance"""
+    """initialization count of instance"""
     number_of_instances = 0
 
     """Class attribute for the symbol"""
@@ -110,8 +110,8 @@ class Rectangle:
         else:
             return rect_2
 
-    """class methode : square is a rectangle"""
+    """class method : square is a rectangle"""
 
     @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        return cls(width=size, height=size)
