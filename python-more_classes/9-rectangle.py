@@ -113,4 +113,4 @@ class Rectangle:
     """class method : square is a rectangle"""
     @classmethod
     def square(cls, size=0):
-        return cls(width=size, height=size)
+        return cls(size, size)
