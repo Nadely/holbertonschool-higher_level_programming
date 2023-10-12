@@ -17,16 +17,16 @@ class Rectangle:
 
     """ Private instance attribute: width and height"""
     def __init__(self, width=0, height=0):
-        if not isinstance(height, int):
-            raise TypeError("height must be an integer")
-        if height < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = height
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width < 0:
             raise ValueError("width must be >= 0")
         self.__width = width
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = height
         Rectangle.number_of_instances += 1
 
     """ width must be an integer, otherwise raise a TypeError exception with
@@ -113,4 +113,4 @@ class Rectangle:
     """class method : square is a rectangle"""
     @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        return cls(width=size, height=size)
