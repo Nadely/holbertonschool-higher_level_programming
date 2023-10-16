@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def lookup(obj):
-    return obj.__dict__
+    list_attributes = obj.__dict__
+    return list_attributes
