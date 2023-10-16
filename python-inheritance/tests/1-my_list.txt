@@ -6,11 +6,11 @@
 >>> my_list = MyList()
 []
 
->>> my_list = MyList(A, Z)
+>>> my_list = MyList('A', 'Z')
 Traceback (most recent call last):
 TypeError: Not all elements in the list are integers
 
->>> my_list = MyList(5, a)
+>>> my_list = MyList(5, 'a')
 Traceback (most recent call last):
 TypeError: Not all elements in the list are integers
 
