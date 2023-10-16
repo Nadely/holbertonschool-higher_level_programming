@@ -1,1 +1,15 @@
-#!/usr/bin/python3
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList(1, 4, 2, 3, 5)
+[1, 2, 3, 4, 5]
+
+>>> my_list = MyList()
+[]
+
+>>> my_list = MyList(A, Z)
+Traceback (most recent call last):
+NameError: name 'A' is not defined
+
+>>> my_list = MyList(5, a)
+Traceback (most recent call last):
+NameError: name 'a' is not defined
