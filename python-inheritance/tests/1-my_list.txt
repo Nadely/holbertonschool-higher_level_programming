@@ -8,8 +8,12 @@
 
 >>> my_list = MyList(A, Z)
 Traceback (most recent call last):
-NameError: name 'A' is not defined
+TypeError: Not all elements in the list are integers
 
 >>> my_list = MyList(5, a)
 Traceback (most recent call last):
-NameError: name 'a' is not defined
+TypeError: Not all elements in the list are integers
+
+>>> my_list = MyList(1.5)
+Traceback (most recent call last):
+TypeError: Not all elements in the list are integers
