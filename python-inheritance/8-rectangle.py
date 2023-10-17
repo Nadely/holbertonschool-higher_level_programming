@@ -18,6 +18,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{:s} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """def in class"""
 
