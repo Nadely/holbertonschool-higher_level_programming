@@ -3,4 +3,6 @@
 
 
 class BaseGeometry:
+    """class empty"""
+
     {}
