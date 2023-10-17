@@ -1,2 +1,4 @@
 *my_class*
 *.txt
+*.json
+/__pycache__
