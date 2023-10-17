@@ -71,3 +71,7 @@ TypeError: area() takes 1 positional argument but 2 were given
 >>> bg.integer_validator("Hello", 2, 2)
 Traceback (most recent call last):
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.integer_validator("Test", True)
+Traceback (most recent call last):
+TypeError: Test must be an integer
