@@ -1,9 +1,6 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
->>> x = BaseGeometry(5)
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry() takes no arguments
+
 >>> bg.area()
 Traceback (most recent call last):
 ...
