@@ -43,8 +43,7 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """size must be a positive integer, validated by integer_validator"""
-        if isinstance(size, int):
-            self.integer_validator("size", size)
+        self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
