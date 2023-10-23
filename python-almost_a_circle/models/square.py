@@ -28,11 +28,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Update attributes with arguments"""
-        if args:
-            if len(args) > 0:
-                super().update(*args[:4])
-                self.size = args[0]
-        else:
-            super().update(**kwargs)
-            if "size" in kwargs:
-                self.size = kwargs["size"]
+        super().update(*args, **kwargs)
+        if "size" in kwargs:
+            self.width = kwargs["size"]
+            self.height = kwargs["size"]
