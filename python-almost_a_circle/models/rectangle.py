@@ -87,10 +87,9 @@ class Rectangle(Base):
 
     def display(self):
         """Proint #"""
+        print('\n' * self.__y, end='')
         for _ in range(self.__height):
-            for _ in range(self.__width):
-                print("#", end="")
-            print()
+            print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
         """Print str"""
