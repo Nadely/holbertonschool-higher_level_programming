@@ -30,9 +30,9 @@ class Base:
         if list_objs is None:
             list_objs = []
         filename = cls.__name__ + ".json"
+        list_dict = [obj.to_dictionary() for obj in list_objs]
+        json_str = cls.to_json_string(list_dict)
         with open(filename, 'w', encoding='utf-8') as file:
-            list_dict = [obj.to_dictionary() for obj in list_objs]
-            json_str = cls.to_json_string(list_dict)
             file.write(json_str)
 
     @staticmethod
@@ -53,11 +53,11 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        if not cls:
-            return []
-        else:
-            filename = cls.__name__ + ".json"
+        filename = cls.__name__ + ".json"
+        try:
             with open(filename, 'r', encoding='utf-8') as file:
                 json_str = file.read()
                 list_dicts = cls.from_json_string(json_str)
                 return [cls.create(**d) for d in list_dicts]
+        except FileNotFoundError:
+            return []
