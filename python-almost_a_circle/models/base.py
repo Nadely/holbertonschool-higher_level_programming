@@ -19,7 +19,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
-        try :
+        try:
             return json.dumps(list_dictionaries)
         except FileNotFoundError:
             return "[]"
