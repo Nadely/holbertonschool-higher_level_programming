@@ -28,13 +28,13 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
             """that assigns an argument to each attribute"""
-            attributs = ["id", "width", "height", "x", "y"]
             if args:
                 arg = 0
+                attributs = ["id", "width", "height", "x", "y"]
                 for i in args:
                     setattr(self, attributs[arg], i)
                     arg += 1
-                    return
+                return
             else:
                 for key, value in kwargs.items():
                     setattr(self, key, value)
