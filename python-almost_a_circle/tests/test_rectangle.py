@@ -159,5 +159,25 @@ class TestRectangle(unittest.TestCase):
         expected_dict = {'id': 1, 'width': 5, 'height': 10, 'x': 2, 'y': 3}
         self.assertEqual(rect_dict, expected_dict)
 
+
+
+    def test_rectangle_init_with_invalid_width(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(0, 10)
+
+    def test_rectangle_init_with_invalid_height(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(10, -5)
+
+    def test_rectangle_set_width_with_invalid_value(self):
+        rect = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            rect.width = -5
+
+    def test_rectangle_set_height_with_invalid_value(self):
+        rect = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            rect.height = -5
+
 if __name__ == "__main__":
     unittest.main()

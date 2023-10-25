@@ -175,5 +175,18 @@ class TestSquare(unittest.TestCase):
         expected_dict = {'id': 1, 'size': 5, 'x': 2, 'y': 3}
         self.assertEqual(square_dict, expected_dict)
 
+
+
+
+
+    def test_square_init_with_invalid_size(self):
+        with self.assertRaises(ValueError):
+            square = Square(0)
+
+    def test_square_set_size_with_invalid_value(self):
+        square = Square(5)
+        with self.assertRaises(ValueError):
+            square.size = -5
+
 if __name__ == "__main__":
     unittest.main()

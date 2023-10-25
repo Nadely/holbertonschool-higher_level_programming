@@ -46,7 +46,6 @@ class TestBase(unittest.TestCase):
 
     #Testent la sauvegarde de données JSON dans un fichier et leur lecture
     # pour vérifier l'intégrité des données.
-
     def test_save_to_file_with_empty_data(self):
         data = []
         filename = "Base.json"
@@ -72,7 +71,6 @@ class TestBase(unittest.TestCase):
 
     #Vérifient que la méthode from_json_string peut convertir une chaîne
     # JSON en une structure de données Python.
-
     def test_from_json_string_with_data(self):
         data = [{'key1': 'value1', 'key2': 'value2'}]
         json_str = json.dumps(data)
@@ -87,6 +85,17 @@ class TestBase(unittest.TestCase):
     def test_from_json_string_with_none_data(self):
         loaded_data = Base.from_json_string(None)
         self.assertEqual(loaded_data, [])
+
+
+
+
+    def test_init_with_non_integer_id(self):
+        with self.assertRaises(TypeError):
+            base = Base("invalid_id")
+
+    def test_init_with_negative_id(self):
+        with self.assertRaises(ValueError):
+            base = Base(-5)
 
 if __name__ == "__main__":
     unittest.main()
