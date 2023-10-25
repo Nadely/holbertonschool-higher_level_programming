@@ -179,5 +179,75 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             rect.height = -5
 
+
+
+    def test_init_with_non_integer_width(self):
+        with self.assertRaises(TypeError):
+            rect = Rectangle("invalid_width", 10)
+
+    def test_init_with_non_integer_height(self):
+        with self.assertRaises(TypeError):
+            rect = Rectangle(10, "invalid_height")
+
+    def test_init_with_non_integer_x(self):
+        with self.assertRaises(TypeError):
+            rect = Rectangle(10, 20, "invalid_x")
+
+    def test_init_with_non_integer_y(self):
+        with self.assertRaises(TypeError):
+            rect = Rectangle(10, 20, 2, "invalid_y")
+
+    def test_init_with_negative_width(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(-5, 10)
+
+    def test_init_with_zero_width(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(0, 10)
+
+    def test_init_with_negative_height(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(10, -5)
+
+    def test_init_with_zero_height(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(10, 0)
+
+    def test_set_width_with_negative_value(self):
+        rect = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            rect.width = -5
+
+    def test_set_height_with_negative_value(self):
+        rect = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            rect.height = -5
+
+    def test_set_x_with_negative_value(self):
+        rect = Rectangle(10, 20, 2, 3)
+        with self.assertRaises(ValueError):
+            rect.x = -1
+
+    def test_set_y_with_negative_value(self):
+        rect = Rectangle(10, 20, 2, 3)
+        with self.assertRaises(ValueError):
+            rect.y = -1
+
+    def test_init_with_minimum_width_and_height(self):
+        rect = Rectangle(1, 1)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 1)
+
+    def test_init_with_maximum_width_and_height(self):
+        rect = Rectangle(2**31 - 1, 2**31 - 1)
+        self.assertEqual(rect.width, 2**31 - 1)
+        self.assertEqual(rect.height, 2**31 - 1)
+
+    def test_set_width_to_maximum_value(self):
+        rect = Rectangle(10, 20)
+        rect.width = 2**31 - 1
+        self.assertEqual(rect.width, 2**31 - 1)
+
+
 if __name__ == "__main__":
     unittest.main()

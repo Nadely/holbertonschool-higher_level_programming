@@ -188,5 +188,71 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             square.size = -5
 
+    def test_init_with_non_integer_size(self):
+        with self.assertRaises(TypeError):
+            square = Square("invalid_size")
+
+    def test_set_size_with_non_integer_value(self):
+        square = Square(5)
+        with self.assertRaises(TypeError):
+            square.size = "invalid_size"
+
+    def test_init_with_negative_size(self):
+        with self.assertRaises(ValueError):
+            square = Square(-5)
+
+    def test_init_with_zero_size(self):
+        with self.assertRaises(ValueError):
+            square = Square(0)
+
+    def test_set_size_with_negative_value(self):
+        square = Square(5)
+        with self.assertRaises(ValueError):
+            square.size = -5
+
+    def test_set_x_with_negative_value(self):
+        square = Square(5, 2, 3)
+        with self.assertRaises(ValueError):
+            square.x = -1
+
+    def test_set_y_with_negative_value(self):
+        square = Square(5, 2, 3)
+        with self.assertRaises(ValueError):
+            square.y = -1
+
+    def test_init_with_minimum_size(self):
+        square = Square(1)
+        self.assertEqual(square.size, 1)
+
+    def test_init_with_maximum_size(self):
+        square = Square(2**31 - 1)
+        self.assertEqual(square.size, 2**31 - 1)
+
+    def test_set_size_to_maximum_value(self):
+        square = Square(5)
+        square.size = 2**31 - 1
+        self.assertEqual(square.size, 2**31 - 1)
+
+    def test_init_with_minimum_x_and_y(self):
+        square = Square(5, 0, 0)
+        self.assertEqual(square.x, 0)
+        self.assertEqual(square.y, 0)
+
+    def test_init_with_maximum_x_and_y(self):
+        square = Square(5, 2**31 - 1, 2**31 - 1)
+        self.assertEqual(square.x, 2**31 - 1)
+        self.assertEqual(square.y, 2**31 - 1)
+
+    def test_set_x_to_maximum_value(self):
+        square = Square(5, 2, 3)
+        square.x = 2**31 - 1
+        self.assertEqual(square.x, 2**31 - 1)
+
+    def test_set_y_to_maximum_value(self):
+        square = Square(5, 2, 3)
+        square.y = 2**31 - 1
+        self.assertEqual(square.y, 2**31 - 1)
+
+
 if __name__ == "__main__":
     unittest.main()

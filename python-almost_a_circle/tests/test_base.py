@@ -97,5 +97,18 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(ValueError):
             base = Base(-5)
 
+    def test_init_with_zero_id(self):
+        base = Base(0)
+        self.assertEqual(base.id, 0)
+
+    def test_init_with_maximum_id(self):
+        base = Base(2**31 - 1)
+        self.assertEqual(base.id, 2**31 - 1)
+
+    def test_set_id_to_maximum_value(self):
+        base = Base()
+        base.id = 2**31 - 1
+        self.assertEqual(base.id, 2**31 - 1)
+
 if __name__ == "__main__":
     unittest.main()
