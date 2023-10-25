@@ -42,5 +42,29 @@ class TestBase(unittest.TestCase):
         json_str = Base.to_json_string(None)
         self.assertEqual(json_str, "[]")
 
+
+    def test_save_to_file_with_empty_data(self):
+        data = []
+        filename = "Base.json"
+
+        Base.save_to_file(data)
+
+        with open(filename, 'r', encoding='utf-8') as file:
+            saved_data = json.load(file)
+            self.assertEqual(saved_data, [])
+
+        os.remove(filename)
+
+    def test_save_to_file_with_none_data(self):
+        filename = "Base.json"
+
+        Base.save_to_file(None)
+
+        with open(filename, 'r', encoding='utf-8') as file:
+            saved_data = json.load(file)
+            self.assertEqual(saved_data, [])
+
+        os.remove(filename)
+
 if __name__ == "__main__":
     unittest.main()
