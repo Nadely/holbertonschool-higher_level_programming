@@ -92,7 +92,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(instance.attr2, 1)
 
     def test_load_from_file_with_data(self):
-        data = [{'attr1': 10, 'attr2': 'example'}, {'attr1': 20, 'attr2': 'test'}]
+        data = [{'attr1': 10, 'attr2': 'example'}, {
+            'attr1': 20, 'attr2': 'test'}]
         filename = "Base.json"
 
         # Create a JSON file with the test data
