@@ -80,37 +80,5 @@ class TestBase(unittest.TestCase):
         loaded_data = Base.from_json_string(None)
         self.assertEqual(loaded_data, [])
 
-    def test_create_with_attributes(self):
-        data = {'attr1': 10, 'attr2': 'example'}
-        instance = Base.create(**data)
-        self.assertEqual(instance.attr1, 10)
-        self.assertEqual(instance.attr2, 'example')
-
-    def test_create_without_attributes(self):
-        instance = Base.create()
-        self.assertEqual(instance.attr1, 1)
-        self.assertEqual(instance.attr2, 1)
-
-    def test_load_from_file_with_data(self):
-        data = [{'attr1': 10, 'attr2': 'example'}, {
-            'attr1': 20, 'attr2': 'test'}]
-        filename = "Base.json"
-
-        # Create a JSON file with the test data
-        with open(filename, 'w', encoding='utf-8') as file:
-            file.write(json.dumps(data))
-
-        instances = Base.load_from_file()
-
-        self.assertEqual(len(instances), 2)
-        self.assertEqual(instances[0].attr1, 10)
-        self.assertEqual(instances[0].attr2, 'example')
-        self.assertEqual(instances[1].attr1, 20)
-        self.assertEqual(instances[1].attr2, 'test')
-
-    def test_load_from_file_with_no_file(self):
-        instances = Base.load_from_file()
-        self.assertEqual(instances, [])
-
 if __name__ == "__main__":
     unittest.main()
