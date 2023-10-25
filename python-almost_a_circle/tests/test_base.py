@@ -14,20 +14,22 @@ class TestBase(unittest.TestCase):
         self.assertEqual(obj.id, 1)
 
     def test_creation_without_id(self):
-        #Checks if objects are created with auto-incrementing IDs when no ID
-        # is provided.
+        #Vérifie que la classe Base attribue automatiquement des IDs
+        # incrémentiels aux objets créés.
         obj1 = Base()
         obj2 = Base()
         self.assertEqual(obj1.id, 1)
         self.assertEqual(obj2.id, 2)
 
     def test_private_nb_objects_no_direct_access(self):
-        #Ensures that there is no direct access to the private __nb_objects
-        # attribute
+        #S'assure qu'il n'y a pas d'accès direct à l'attribut privé
+        # __nb_objects.
         obj1 = Base()
         with self.assertRaises(AttributeError):
             obj1.__nb_objects
 
+    #Vérifient que la méthode to_json_string convertit correctement
+    # des données en format JSON.
     def test_to_json_string_with_data(self):
         data = [{'key1': 'value1', 'key2': 'value2'}]
         json_str = Base.to_json_string(data)
@@ -41,6 +43,9 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_with_none_data(self):
         json_str = Base.to_json_string(None)
         self.assertEqual(json_str, "[]")
+
+    #Testent la sauvegarde de données JSON dans un fichier et leur lecture
+    # pour vérifier l'intégrité des données.
 
     def test_save_to_file_with_empty_data(self):
         data = []
@@ -64,6 +69,9 @@ class TestBase(unittest.TestCase):
             self.assertEqual(saved_data, [])
 
         os.remove(filename)
+
+    #Vérifient que la méthode from_json_string peut convertir une chaîne
+    # JSON en une structure de données Python.
 
     def test_from_json_string_with_data(self):
         data = [{'key1': 'value1', 'key2': 'value2'}]
