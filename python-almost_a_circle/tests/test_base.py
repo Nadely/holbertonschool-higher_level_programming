@@ -28,5 +28,19 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(AttributeError):
             obj1.__nb_objects
 
+    def test_to_json_string_with_data(self):
+        data = [{'key1': 'value1', 'key2': 'value2'}]
+        json_str = Base.to_json_string(data)
+        self.assertEqual(json_str, json.dumps(data))
+
+    def test_to_json_string_with_empty_data(self):
+        data = []
+        json_str = Base.to_json_string(data)
+        self.assertEqual(json_str, "[]")
+
+    def test_to_json_string_with_none_data(self):
+        json_str = Base.to_json_string(None)
+        self.assertEqual(json_str, "[]")
+
 if __name__ == "__main__":
     unittest.main()
