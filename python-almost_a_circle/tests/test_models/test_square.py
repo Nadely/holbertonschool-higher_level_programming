@@ -1,5 +1,9 @@
 import unittest
 from models.square import Square
+import json
+import os
+import sys
+from io import StringIO
 
 class TestSquare(unittest.TestCase):
     def test_square_initialization(self):
