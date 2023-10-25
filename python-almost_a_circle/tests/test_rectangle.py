@@ -2,6 +2,7 @@ import unittest
 from models.rectangle import Rectangle
 import os
 
+
 class TestRectangle(unittest.TestCase):
     def setUp(self):
         """Initialisation d'une instance avec des paramètres de largeur et de
@@ -198,6 +199,7 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(10, 20)
         rect.width = 2**31 - 1
         self.assertEqual(rect.width, 2**31 - 1)
+
 
 if __name__ == "__main__":
     unittest.main()

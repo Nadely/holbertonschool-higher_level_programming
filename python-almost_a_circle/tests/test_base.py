@@ -5,6 +5,7 @@ from models.square import Square
 import json
 import os
 
+
 class TestBase(unittest.TestCase):
     def test_creation_with_id(self):
         """Vérifie si un objet est créé avec l'ID spécifié."""
@@ -119,6 +120,7 @@ class TestBase(unittest.TestCase):
         base = Base()
         base.id = 2**31 - 1
         self.assertEqual(base.id, 2**31 - 1)
+
 
 if __name__ == "__main__":
     unittest.main()

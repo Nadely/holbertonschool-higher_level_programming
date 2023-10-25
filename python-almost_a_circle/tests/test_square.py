@@ -2,6 +2,7 @@ import unittest
 from models.square import Square
 import os
 
+
 class TestSquare(unittest.TestCase):
     def setUp(self):
         """Initialisation d'une instance de Square avec une taille de 5."""
@@ -12,7 +13,7 @@ class TestSquare(unittest.TestCase):
         s'il existe."""
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         del self.s
 
@@ -152,6 +153,7 @@ class TestSquare(unittest.TestCase):
         square = Square(5, 2, 3)
         square.y = 2**31 - 1
         self.assertEqual(square.y, 2**31 - 1)
+
 
 if __name__ == "__main__":
     unittest.main()
