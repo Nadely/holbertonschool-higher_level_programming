@@ -83,5 +83,62 @@ class TestRectangle(unittest.TestCase):
         expected_dict = {'id': 3, 'width': 10, 'height': 20, 'x': 1, 'y': 2}
         self.assertEqual(rect_dict, expected_dict)
 
+
+    def test_rectangle_init_with_valid_values(self):
+        rect = Rectangle(5, 10, 2, 3, 1)
+        self.assertEqual(rect.width, 5)
+        self.assertEqual(rect.height, 10)
+        self.assertEqual(rect.x, 2)
+        self.assertEqual(rect.y, 3)
+        self.assertEqual(rect.id, 1)
+
+    def test_rectangle_init_with_invalid_width(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(0, 10)
+
+    def test_rectangle_set_width_with_valid_value(self):
+        rect = Rectangle(5, 10)
+        rect.width = 15
+        self.assertEqual(rect.width, 15)
+
+    def test_rectangle_set_width_with_invalid_value(self):
+        rect = Rectangle(5, 10)
+        with self.assertRaises(ValueError):
+            rect.width = -5
+
+    # Add similar tests for height, x, and y setters
+
+    def test_rectangle_area(self):
+        rect = Rectangle(5, 10)
+        self.assertEqual(rect.area(), 50)
+
+    def test_rectangle_str(self):
+        rect = Rectangle(5, 10, 2, 3, 1)
+        self.assertEqual(str(rect), "[Rectangle] (1) 2/3 - 5/10")
+
+    def test_rectangle_update_with_args(self):
+        rect = Rectangle(5, 10)
+        rect.update(1, 15, 25, 3, 4)
+        self.assertEqual(rect.id, 1)
+        self.assertEqual(rect.width, 15)
+        self.assertEqual(rect.height, 25)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
+
+    def test_rectangle_update_with_kwargs(self):
+        rect = Rectangle(5, 10)
+        rect.update(id=1, width=15, height=25, x=3, y=4)
+        self.assertEqual(rect.id, 1)
+        self.assertEqual(rect.width, 15)
+        self.assertEqual(rect.height, 25)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
+
+    def test_rectangle_to_dictionary(self):
+        rect = Rectangle(5, 10, 2, 3, 1)
+        rect_dict = rect.to_dictionary()
+        expected_dict = {'id': 1, 'width': 5, 'height': 10, 'x': 2, 'y': 3}
+        self.assertEqual(rect_dict, expected_dict)
+
 if __name__ == "__main__":
     unittest.main()
