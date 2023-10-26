@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import unittest, os, sys, json
 from models.square import Square
 from models.base import Base
