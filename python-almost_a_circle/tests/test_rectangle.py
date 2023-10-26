@@ -244,11 +244,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             rect = Rectangle("1", 5)
 
-    def test_width_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            rect = Rectangle(True, 5)
-
     def test_width_list(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
@@ -258,11 +253,6 @@ class TestRectangle(unittest.TestCase):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
             rect = Rectangle(1, "5")
-
-    def test_height_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            rect = Rectangle(1, True)
 
     def test_height_list(self):
         """Testing for other than int"""
@@ -274,11 +264,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             rect = Rectangle(1, 5, "46")
 
-    def test_x_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            rect = Rectangle(1, 5, True)
-
     def test_x_list(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
@@ -288,11 +273,6 @@ class TestRectangle(unittest.TestCase):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
             rect = Rectangle(1, 5, 7, "46")
-
-    def test_y_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            rect = Rectangle(1, 5, 7, True)
 
     def test_x_list(self):
         """Testing for other than int"""

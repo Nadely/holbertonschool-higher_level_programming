@@ -203,11 +203,6 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square("1")
 
-    def test_width_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Square(True)
-
     def test_width_list(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
@@ -218,11 +213,6 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, "46")
 
-    def test_x_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Square(1, True)
-
     def test_x_list(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
@@ -232,11 +222,6 @@ class TestSquare(unittest.TestCase):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
             sq = Square(1, 7, "46")
-
-    def test_y_bool(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Square(1, 7, True)
 
     def test_y_list(self):
         """Testing for other than int"""

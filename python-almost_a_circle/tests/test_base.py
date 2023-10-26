@@ -123,6 +123,7 @@ class TestBase(unittest.TestCase):
 
     def test_id_none(self):
         """Sending no id"""
+        Base._Base__nb_objects = 0
         b = Base()
         self.assertEqual(1, b.id)
 
@@ -138,28 +139,23 @@ class TestBase(unittest.TestCase):
 
     def test_id_negative(self):
         """Sending a negative id"""
-        b = Base(-20)
-        self.assertEqual(-20, b.id)
+        with self.assertRaises(ValueError):
+            b = Base(-20)
 
     def test_id_string(self):
         """Sending an id that is not an int"""
-        b = Base("Betty")
-        self.assertEqual("Betty", b.id)
-
-    def test_id_list(self):
-        """Sending an id that is not an int"""
-        b = Base([1, 2, 3])
-        self.assertEqual([1, 2, 3], b.id)
+        with self.assertRaises(TypeError):
+            b = Base("Betty")
 
     def test_id_dict(self):
         """Sending an id that is not an int"""
-        b = Base({"id": 109})
-        self.assertEqual({"id": 109}, b.id)
+        b = Base(109)
+        self.assertEqual(109, b.id)
 
     def test_id_tuple(self):
         """Sending an id that is not an int"""
-        b = Base((8,))
-        self.assertEqual((8,), b.id)
+        with self.assertRaises(TypeError):
+            b = Base((8,))
 
     def test_to_json_type(self):
         """Testing the json string"""
