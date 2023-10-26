@@ -17,7 +17,7 @@ class Base:
                 raise ValueError("id must be a non-negative integer")
             self.id = id
         else:
-            self.__class__.__nb_objects += 1
+            self.Base.__nb_objects += 1
             self.id = self.__class__.__nb_objects
 
     @staticmethod
