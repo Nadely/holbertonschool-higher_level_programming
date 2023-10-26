@@ -189,5 +189,11 @@ class TestBase(unittest.TestCase):
 
 # ---------------------------------------------------------------------- #
 
+    def test_id_list(self):
+        """Sending an id that is not an int"""
+        with self.assertRaises(TypeError):
+            b = Base([1, 2, 3])
+
+
 if __name__ == "__main__":
     unittest.main()
