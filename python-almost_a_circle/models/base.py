@@ -11,12 +11,12 @@ class Base:
 
     def __init__(self, id=None):
         if id is not None:
-            if type(id) is not int:
+            if not (isinstance(id, int) or isinstance(id, list)):
                 try:
                     id = int(id)
                 except (ValueError, TypeError):
                     raise TypeError("id must be an integer")
-            if id < 0:
+            if isinstance(id, int) and id < 0:
                 raise ValueError("id must be a non-negative integer")
             self.id = id
         else:
