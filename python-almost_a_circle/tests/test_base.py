@@ -50,9 +50,7 @@ class TestBase(unittest.TestCase):
         lecture pour vérifier l'intégrité des données."""
         data = []
         filename = "Base.json"
-
         Base.save_to_file(data)
-
         with open(filename, 'r', encoding='utf-8') as file:
             saved_data = json.load(file)
             self.assertEqual(saved_data, [])
