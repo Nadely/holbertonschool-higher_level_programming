@@ -566,5 +566,28 @@ class TestRectangle(unittest.TestCase):
 
 # ---------------------------------------------------------------------- #
 
+    def test_height_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            rect = Rectangle(1, True)
+
+
+    def test_y_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            rect = Rectangle(1, 5, 7, True)
+
+    def test_width_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            rect = Rectangle(True, 5)
+
+
+    def test_x_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            rect = Rectangle(1, 5, True)
+
+
 if __name__ == "__main__":
     unittest.main()

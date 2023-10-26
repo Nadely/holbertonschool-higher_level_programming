@@ -544,5 +544,26 @@ class TestSquare(unittest.TestCase):
 
 # ---------------------------------------------------------------------- #
 
+
+    def test_x_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            sq = Square(1, True)
+
+
+    def test_width_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            sq = Square(True)
+
+
+    def test_y_bool(self):
+        """Testing for other than int"""
+        with self.assertRaises(TypeError):
+            sq = Square(1, 7, True)
+
+
+
+
 if __name__ == "__main__":
     unittest.main()
