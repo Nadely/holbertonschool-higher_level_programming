@@ -565,5 +565,24 @@ class TestSquare(unittest.TestCase):
 
 
 
+    def test_saving_to_file_empty_list(self):
+        """Test saving a file into JSON format with an empty list"""
+        try:
+            os.remove("Square.json")
+        except FileNotFoundError:
+            pass
+
+        # Create an instance of your Square class
+        square = Square(5, 0, 0, 346)
+
+        # Call the save_to_file method with an empty list
+        square.save_to_file([])
+
+        # You can add assertions to verify the test's success, for example, checking if the file exists
+        self.assertTrue(os.path.exists("Square.json"))
+
+
+
+
 if __name__ == "__main__":
     unittest.main()
