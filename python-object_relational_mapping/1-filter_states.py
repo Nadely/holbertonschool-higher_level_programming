@@ -31,7 +31,7 @@ def list_states():
 
     # Print the results
     for row in query_rows:
-        if row[1].startswitch('N'):
+        if row[1].startswith('N'):
             print(row)
 
     # Close the cursor and connection
