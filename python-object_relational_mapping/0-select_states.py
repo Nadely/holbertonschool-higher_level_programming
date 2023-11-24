@@ -37,4 +37,5 @@ def list_states():
 
 if __name__ == "__main__":
     """Execute the list_states function when the script is run."""
+
     list_states()
