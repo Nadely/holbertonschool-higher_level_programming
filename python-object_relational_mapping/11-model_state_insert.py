@@ -21,7 +21,7 @@ if __name__ == "__main__":
     state_new = State(name="Louisiana")
     session.add(state_new)
 
-# Commit the session to persist the changes to the database
+    # Commit the session to persist the changes to the database
     session.commit()
 
     # Print result
