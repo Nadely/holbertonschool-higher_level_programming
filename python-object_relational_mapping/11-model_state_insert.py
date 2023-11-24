@@ -17,8 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query the database
+    # Create a new State object for Louisiana
     state_new = State(name="Louisiana")
+
+    # Add the new State object to the session
     session.add(state_new)
 
     # Commit the session to persist the changes to the database
