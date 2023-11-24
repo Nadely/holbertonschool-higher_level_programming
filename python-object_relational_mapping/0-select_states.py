@@ -35,7 +35,7 @@ def list_states():
     cur.close()
     conn.close()
 
+
 if __name__ == "__main__":
     """Execute the list_states function when the script is run."""
-
     list_states()
