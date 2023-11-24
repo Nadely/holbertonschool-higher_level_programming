@@ -10,12 +10,16 @@ import sys
 def list_states():
     """Lists all states from the database hbtn_0e_0_usa"""
 
+    if len(sys.argv) != 5:
+        print("Usage: python script.py <username> <password> <database> <state_name>")
+        sys.exit(1)
+
     # Connect to the database
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],
-        passwd="sys.argv[2]",
+        passwd=sys.argv[2],
         db=sys.argv[3]
     )
 
