@@ -18,9 +18,9 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the database
-    contain_a = (session.query(State).filter(State.name.like('%a%')).all)
+    contain_a = session.query(State).filter(State.name.like('%a%')).all()
 
-    # Print result
+    # Delete the states with 'a' in their name
     for state in contain_a:
         session.delete(state)
 
