@@ -18,9 +18,8 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the database
-    contain_a = (session.query(State)
-                     .filter(State.name.like('%a%'))
-                     .order_by(State.id))
+    contain_a = (session.query(State).filter(State.name.like('%a%')).order_by(
+        State.id))
 
     # Print result
     for state in contain_a:
