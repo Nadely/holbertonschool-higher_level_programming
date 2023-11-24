@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script that prints the State object with the name passed as argument
-from the database hbtn_0e_6_usa"""
+"""script that changes the name of a State object from the database
+hbtn_0e_6_usa"""
 
 import sys
 from model_state import Base, State
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-     # Query the State object with id = 2
+    # Query the State object with id = 2
     state_to_update = session.query(State).filter_by(id=2).first()
 
     # Check if the State object with id = 2 exists
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         # Commit the session to persist the changes to the database
         session.commit()
 
-    # Print result
+        # Print result
         print("{}".format(state_to_update.id))
     else:
         print("Not found")
