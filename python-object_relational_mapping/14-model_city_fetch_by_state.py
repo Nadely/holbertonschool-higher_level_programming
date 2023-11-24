@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Query the database and print City objects
     cities = session.query(City).order_by(City.id).all()
 
-    #Print result
+    # Print result
     for city in cities:
         state_name = session.query(State.name).filter(State.id ==
                                                       city.state_id).scalar()

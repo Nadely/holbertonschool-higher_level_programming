@@ -23,7 +23,3 @@ class City(Base):
     name = Column("name", String(128), nullable=False)
     state_id = Column("state_id", Integer, ForeignKey('states.id'),
                       nullable=False)
-
-    def __repr__(self):
-        return f"<City(id={self.id}, name={self.name}, state_id={
-            self.state_id})>"
