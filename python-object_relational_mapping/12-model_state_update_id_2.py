@@ -25,7 +25,7 @@ if __name__ == "__main__":
         # Update the name of the State to "New Mexico"
         state_to_update.name = "New Mexico"
 
-    # Commit the session to persist the changes to the database
+        # Commit the session to persist the changes to the database
         session.commit()
 
     # Print result
