@@ -23,8 +23,8 @@ def list_states():
     cur = conn.cursor()
 
     # Execute the query
-    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-                .format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".
+                format(sys.argv[4]))
 
     # Fetch all rows
     query_rows = cur.fetchall()
