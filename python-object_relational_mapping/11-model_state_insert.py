@@ -27,7 +27,7 @@ if __name__ == "__main__":
     session.commit()
 
     # Print result
-    print("{}: {}".format(state_new.id, state_new.name))
+    print("{}".format(state_new.id))
 
     # Close the session
     session.close()
