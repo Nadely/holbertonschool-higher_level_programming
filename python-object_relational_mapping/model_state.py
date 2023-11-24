@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python37
+"""Start link class to table in database """
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -12,8 +13,11 @@ class State(Base):
     """Represents a state in the database. Attributes:
     - id: The unique identifier for the state.
     - name: The name of the state."""
-    
+
     __tablename__ = 'states'
-    id = Column("id", Integer(11), primary_key=True, nullable=False,
+    id = Column("id", Integer, primary_key=True, nullable=False,
                 autoincrement=True)
     name = Column("name", String(128), nullable=False)
+
+    def __repr__(self):
+        return f"<State(id={self.id}, name={self.name})>"
