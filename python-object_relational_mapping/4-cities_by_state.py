@@ -23,7 +23,8 @@ def list_states():
 
     # Execute the query
     cur.execute("SELECT cities.id, cities.name, states.name FROM cities "
-                "JOIN states ON cities.state_id = states.id ORDER BY cities.id")
+                "JOIN states ON cities.state_id = states.id ORDER "
+                "BY cities.id")
 
     # Fetch all rows
     query_rows = cur.fetchall()
