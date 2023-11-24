@@ -11,10 +11,6 @@ import sys
 def list_states():
     """Lists all states from the database hbtn_0e_0_usa"""
 
-    if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
-        sys.exit(1)
-
     # Connect to the database
     conn = MySQLdb.connect(
         host="localhost",
@@ -28,14 +24,15 @@ def list_states():
     cur = conn.cursor()
 
     # Execute the query
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch all rows
     query_rows = cur.fetchall()
 
     # Print the results
     for row in query_rows:
-        print(row)
+        if row[1].startswitch('N'):
+            print(row)
 
     # Close the cursor and connection
     cur.close()
