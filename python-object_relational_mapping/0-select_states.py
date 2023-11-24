@@ -34,3 +34,6 @@ def list_states():
     # Close the cursor and connection
     cur.close()
     conn.close()
+
+if __name__ == "__main__":
+    list_states()
