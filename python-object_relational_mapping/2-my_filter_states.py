@@ -10,7 +10,7 @@ import sys
 def list_states():
     """Lists all states from the database hbtn_0e_0_usa"""
 
-        # Connect to the database
+    # Connect to the database
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -19,14 +19,20 @@ def list_states():
         db=sys.argv[3]
     )
 
+    # Create a cursor
     cur = conn.cursor()
+
+    # Execute the query
     cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
                 .format(sys.argv[4]))
 
-
+    # Fetch all rows
     query_rows = cur.fetchall()
+
+    # Print the results
     for row in query_rows:
         print(row)
 
+    # Close the cursor and connection
     cur.close()
     conn.close()

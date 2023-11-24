@@ -18,13 +18,19 @@ def list_states():
         db=sys.argv[3]
     )
 
+    # Create a cursor
     cur = conn.cursor()
+
+    # Execute the query
     cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-
+    # Fetch all rows
     query_rows = cur.fetchall()
+
+    # Print the results
     for row in query_rows:
         print(row)
 
+    # Close the cursor and connection
     cur.close()
     conn.close()
