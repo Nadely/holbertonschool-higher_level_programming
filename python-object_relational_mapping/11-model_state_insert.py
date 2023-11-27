@@ -4,7 +4,7 @@ hbtn_0e_6_usa"""
 
 import sys
 from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
 if __name__ == "__main__":
@@ -14,8 +14,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     # Create a session to execute SQL commands
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(engine)
 
     # Create a new State object for Louisiana
     state_new = State(name="Louisiana")

@@ -10,9 +10,6 @@ import sys
 def list_states():
     """Lists all states from the database hbtn_0e_0_usa"""
 
-    if len(sys.argv) != 5:
-        sys.exit(1)
-
     # Connect to the database
     conn = MySQLdb.connect(
         host="localhost",
@@ -34,7 +31,8 @@ def list_states():
 
     # Print the results
     for row in query_rows:
-        print(row)
+        if row == sys.argv[4]:
+            print(row)
 
     # Close the cursor and connection
     cur.close()

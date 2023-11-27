@@ -3,7 +3,7 @@
 
 import sys
 from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
 if __name__ == "__main__":
@@ -13,8 +13,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     # Create a session to execute SQL commands
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(engine)
 
     # Query the database and print results
     first_state = session.query(State).order_by(State.id).first()
