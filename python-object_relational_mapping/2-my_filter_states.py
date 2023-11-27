@@ -31,7 +31,7 @@ def list_states():
 
     # Print the results
     for row in query_rows:
-        if row == sys.argv[4]:
+        if row[1] == sys.argv[4]:
             print(row)
 
     # Close the cursor and connection
